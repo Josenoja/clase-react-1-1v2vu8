@@ -6,23 +6,23 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 export function App() {
   return (
-    <>
+    <><Router>
       <nav>
         <h1>Mi aplicación</h1>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <Link to ="/">Home</Link>
           </li>
           <li>
-            <a href="/listas">Listas de tareas</a>
+            <Link to="/listas">Listas de tareas</Link>
           </li>
           <li>
-            <a href="/perfil">Perfil</a>
+            <Link to="/perfil">Perfil</Link>
           </li>
         </ul>
       </nav>
-      <Router>
-        <Route path="/" component={Home} />
+      
+        <Route path="/" exact component={Home} />
         <Route path="/listas" component={PaginaListas} />
         <Route path="/perfil" component={Perfil} />
       </Router>
